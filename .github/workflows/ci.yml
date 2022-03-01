@@ -1,6 +1,6 @@
 name: ci-node
 
-on: pull_request
+on: push
 
 jobs:
   lint:
@@ -23,5 +23,5 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --ignore-scripts
-        
+
       - run: npm test
